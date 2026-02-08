@@ -7,6 +7,8 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
+// when running behind a proxy (Apache/NGINX/Bitnami), trust X-Forwarded-* headers
+app.set('trust proxy', true);
 const PORT = process.env.PORT || 3000;
 
 // Security & rate limiting
@@ -36,10 +38,13 @@ app.post('/contact', contactLimiter, async (req, res) => {
   try {
     const { name, email, message, 'g-recaptcha-response': captchaToken } = req.body;
 
+    // Determine client IP reliably when behind a proxy (Apache/Bitnami)
+    const clientIp = req.ip || (req.headers['x-forwarded-for'] ? req.headers['x-forwarded-for'].split(',')[0].trim() : req.connection.remoteAddress || '');
+
     // Validate honeypot (must be empty)
     const honeypot = req.body.hp_contact || '';
     if (honeypot) {
-      console.warn('[SPAM DETECTED] Honeypot field filled from IP:', req.ip);
+      console.warn('[SPAM DETECTED] Honeypot field filled from IP:', clientIp);
       return res.status(400).json({ error: 'Submission failed. Please try again.' });
     }
 
@@ -78,8 +83,8 @@ app.post('/contact', contactLimiter, async (req, res) => {
       },
     });
 
-    if (!captchaResponse.data.success || captchaResponse.data.score < 0.5) {
-      console.warn('[CAPTCHA FAILED] Score:', captchaResponse.data.score, 'from IP:', req.ip);
+    if (!captchaResponse.data.success || (typeof captchaResponse.data.score === 'number' && captchaResponse.data.score < 0.5)) {
+      console.warn('[CAPTCHA FAILED] Score:', captchaResponse.data.score, 'from IP:', clientIp);
       return res.status(400).json({ error: 'reCAPTCHA verification failed. Please try again.' });
     }
 
@@ -106,7 +111,7 @@ app.post('/contact', contactLimiter, async (req, res) => {
         <p><strong>Message:</strong></p>
         <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
         <hr>
-        <p><small>Submitted from: ${escapeHtml(req.ip)} at ${new Date().toISOString()}</small></p>
+        <p><small>Submitted from: ${escapeHtml(clientIp)} at ${new Date().toISOString()}</small></p>
       `,
     };
 
@@ -132,7 +137,7 @@ app.post('/contact', contactLimiter, async (req, res) => {
       transporter.sendMail(confirmationMailOptions),
     ]);
 
-    console.log(`[SUCCESS] Contact form submitted by ${email} (${name})`);
+    console.log(`[SUCCESS] Contact form submitted by ${email} (${name}) from IP: ${clientIp}`);
     return res.status(200).json({ success: true, message: 'Your message has been sent successfully!' });
   } catch (error) {
     console.error('[ERROR] Contact form error:', error.message);

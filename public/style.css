@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  background: url('background.png') center/cover;
+  background: url('/background.png') center/cover;
   background-size: cover;
   background-position: center;
   padding: 40px 20px 60px 20px;
@@ -54,15 +54,25 @@ header .tagline {
   font-weight: 600;
   margin-bottom: 20px;
   color: #333;
-}
+    }
 
-header p {
-  font-size: 1rem;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.8;
-  display: none;
-}
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #2b6f73;
+    }
+
+    header p,
+    header .header-desc {
+      font-size: 1rem;
+      max-width: 900px;
+      margin: 0.5rem auto 0 auto;
+      line-height: 1.8;
+      display: block;
+      color: #2f3d3d;
+    }
 
 section {
   padding: 40px 20px;

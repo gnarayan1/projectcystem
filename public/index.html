@@ -5,14 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project CYSTEM | PCOS Awareness & Support</title>
   <meta name="description" content="Project CYSTEM empowers individuals with PCOS through education, advocacy, and community-driven support." />
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #ffffff;
+    }
+
+    header {
+      background: url('background.png') center/cover;
+      background-size: cover;
+      background-position: center;
+      padding: 40px 20px 60px 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      color: #333;
+      min-height: 250px;
+      position: relative;
+    }
+
+    .logo-container {
+      margin-right: 30px;
+      flex-shrink: 0;
+    }
+
+    .logo-container img {
+      max-width: 150px;
+      height: auto;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+    }
+
+    .about-intro {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    header .tagline {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    header p {
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+      display: none;
+    }
+
+    section {
+      padding: 20px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      margin-bottom: 0px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #2b6f73;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      border-bottom: 3px solid #4a9fa5;
+      padding-bottom: 10px;
+    }
+
+    section p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+
+    .focus {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f7f8 100%);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(43, 111, 115, 0.1);
+      border-left: 5px solid #4a9fa5;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(43, 111, 115, 0.15);
+    }
+
+    .card h3 {
+      color: #2b6f73;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      color: #555;
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    footer p {
+      max-width: 800px;
+      margin: 10px auto;
+      line-height: 1.8;
+    }
+
+    footer strong {
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header .tagline {
+        font-size: 1.1rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      section {
+        padding: 40px 15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <header>
     <p class="tagline"><strong>Support. Awareness. Strength.</strong></p>
-    <p>
+    <p class="header-desc">
       Empowering individuals with Polycystic Ovary Syndrome (PCOS) through education,
       advocacy, and community-driven support.
     </p>
@@ -21,7 +176,7 @@
   <section>
     <div class="about-intro">
       <div class="logo-container">
-        <img src="logo.png" alt="Project CYSTEM Logo" />
+        <img src="/logo.png" alt="Project CYSTEM Logo" />
       </div>
       <div>
         <h2>About Project CYSTEM</h2>
@@ -62,7 +217,7 @@
       <div class="card">
         <h3>💬 Awareness & Advocacy</h3>
         <p>
-          Encouraging open conversations about women's health and challenging
+          Encouraging open conversations about women’s health and challenging
           misconceptions surrounding PCOS.
         </p>
       </div>
@@ -96,73 +251,30 @@
     <h2>Get Involved</h2>
     <p>
       You can support Project CYSTEM by sharing educational resources, participating in
-      awareness initiatives, and engaging in respectful conversations about women's health.
+      awareness initiatives, and engaging in respectful conversations about women’s health.
     </p>
     <p>
       Together, we can create change.
     </p>
   </section>
 
-  <section>
-    <h2>Get In Touch</h2>
-    <p>Have questions or want to collaborate? We'd love to hear from you. Fill out the form below:</p>
-    
-    <form id="contactForm" class="contact-form">
-      <!-- Honeypot field (hidden from users) -->
-      <input type="text" name="hp_contact" style="display: none; position: absolute; left: -9999px;" tabindex="-1" autocomplete="off" />
-      
-      <div class="form-group">
-        <label for="name">Name *</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-      </div>
-
-      <!-- reCAPTCHA v3 -->
-      <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY" data-action="submit"></div>
-
-      <button type="submit" class="submit-btn">Send Message</button>
-      
-      <!-- Status message -->
-      <div id="formStatus" class="form-status"></div>
-    </form>
-  </section>
-
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-links">
-          <a href="https://www.instagram.com/projectcystem/" target="_blank" rel="noopener noreferrer">📷 Instagram</a>
-          <a href="https://www.facebook.com/people/Project-Cystem/61576048044702/" target="_blank" rel="noopener noreferrer">👍 Facebook</a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <p>
-          <strong>Disclaimer:</strong> Project CYSTEM provides educational and advocacy-based
-          content only. Information shared on this site is not intended as medical advice and
-          should not replace consultation with qualified healthcare professionals.
-        </p>
+    <div style="margin-bottom: 20px;">
+      <h3 style="color: #2b6f73; margin-bottom: 15px;">Follow Us</h3>
+      <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+        <a href="https://www.instagram.com/projectcystem/" target="_blank" rel="noopener noreferrer" style="color: #2b6f73; text-decoration: none; font-weight: 600;">📷 Instagram</a>
+        <a href="https://www.facebook.com/people/Project-Cystem/61576048044702/" target="_blank" rel="noopener noreferrer" style="color: #2b6f73; text-decoration: none; font-weight: 600;">👍 Facebook</a>
       </div>
     </div>
-    <p style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px;">
+    <p>
+      <strong>Disclaimer:</strong> Project CYSTEM provides educational and advocacy-based
+      content only. Information shared on this site is not intended as medical advice and
+      should not replace consultation with qualified healthcare professionals.
+    </p>
+    <p style="margin-top:10px;">
       © Project CYSTEM. All rights reserved.
     </p>
   </footer>
-
-  <!-- reCAPTCHA script -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  
-  <!-- Contact form handler -->
-  <script src="contact-form.js"></script>
 
 </body>
 </html>
