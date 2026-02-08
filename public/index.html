@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project CYSTEM | PCOS Awareness & Support</title>
+  <meta name="description" content="Project CYSTEM empowers individuals with PCOS through education, advocacy, and community-driven support." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <p class="tagline"><strong>Support. Awareness. Strength.</strong></p>
+    <p>
+      Empowering individuals with Polycystic Ovary Syndrome (PCOS) through education,
+      advocacy, and community-driven support.
+    </p>
+  </header>
+
+  <section>
+    <div class="about-intro">
+      <div class="logo-container">
+        <img src="logo.png" alt="Project CYSTEM Logo" />
+      </div>
+      <div>
+        <h2>About Project CYSTEM</h2>
+        <p>
+          Project CYSTEM is a women's health advocacy initiative dedicated to increasing
+          awareness of Polycystic Ovary Syndrome (PCOS)—a condition affecting millions worldwide.
+        </p>
+        <p>
+          Our mission is to educate communities with evidence-based information, advocate for
+          better understanding and healthcare equity, and build a supportive, stigma-free space
+          for individuals impacted by PCOS.
+        </p>
+        <p>
+          PCOS is more than a diagnosis. It affects physical health, emotional well-being, and
+          quality of life. Through compassion, education, and shared experiences, we aim to
+          empower individuals to advocate for themselves and others.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Mission</h2>
+    <p>
+      To empower individuals affected by PCOS through education, advocacy, and community
+      support.
+    </p>
+
+    <div class="focus">
+      <div class="card">
+        <h3>🌿 Education</h3>
+        <p>
+          Clear, accessible, and science-backed information about PCOS symptoms,
+          diagnosis, and self-advocacy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>💬 Awareness & Advocacy</h3>
+        <p>
+          Encouraging open conversations about women's health and challenging
+          misconceptions surrounding PCOS.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🤍 Community Support</h3>
+        <p>
+          Creating a safe, inclusive space where individuals can feel understood,
+          supported, and empowered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why PCOS Awareness Matters</h2>
+    <p>
+      PCOS is one of the most common endocrine conditions affecting women and individuals
+      with ovaries, yet it remains widely misunderstood and underdiagnosed.
+    </p>
+    <p>
+      Raising awareness promotes earlier diagnosis, reduces stigma and misinformation,
+      and improves access to care and support.
+    </p>
+    <p>
+      Awareness leads to empowerment.
+    </p>
+  </section>
+
+  <section>
+    <h2>Get Involved</h2>
+    <p>
+      You can support Project CYSTEM by sharing educational resources, participating in
+      awareness initiatives, and engaging in respectful conversations about women's health.
+    </p>
+    <p>
+      Together, we can create change.
+    </p>
+  </section>
+
+  <section>
+    <h2>Get In Touch</h2>
+    <p>Have questions or want to collaborate? We'd love to hear from you. Fill out the form below:</p>
+    
+    <form id="contactForm" class="contact-form">
+      <!-- Honeypot field (hidden from users) -->
+      <input type="text" name="hp_contact" style="display: none; position: absolute; left: -9999px;" tabindex="-1" autocomplete="off" />
+      
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+
+      <!-- reCAPTCHA v3 -->
+      <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY" data-action="submit"></div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+      
+      <!-- Status message -->
+      <div id="formStatus" class="form-status"></div>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/projectcystem/" target="_blank" rel="noopener noreferrer">📷 Instagram</a>
+          <a href="https://www.facebook.com/people/Project-Cystem/61576048044702/" target="_blank" rel="noopener noreferrer">👍 Facebook</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <p>
+          <strong>Disclaimer:</strong> Project CYSTEM provides educational and advocacy-based
+          content only. Information shared on this site is not intended as medical advice and
+          should not replace consultation with qualified healthcare professionals.
+        </p>
+      </div>
+    </div>
+    <p style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px;">
+      © Project CYSTEM. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- reCAPTCHA script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+  <!-- Contact form handler -->
+  <script src="contact-form.js"></script>
+
+</body>
+</html>
