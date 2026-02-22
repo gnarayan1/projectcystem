@@ -7,6 +7,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
+    "build:knowledge": "node scripts/build-knowledge-base.js",
+    "build:embeddings": "node scripts/build-rag-embeddings.js",
+    "build:kb": "npm run build:knowledge && npm run build:embeddings",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

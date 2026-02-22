@@ -1,0 +1,51 @@
+[
+  {
+    "id": "faq-what-is-pcos",
+    "prompts": [
+      "what is pcos",
+      "define pcos",
+      "pcos meaning"
+    ],
+    "answer": "PCOS is a common hormonal condition that can affect menstrual cycles, fertility, metabolism, skin, and emotional well-being. Symptoms and severity vary from person to person.",
+    "sources": [
+      {
+        "title": "WHO: Polycystic ovary syndrome fact sheet",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome"
+      }
+    ]
+  },
+  {
+    "id": "faq-is-pcos-common",
+    "prompts": [
+      "is pcos common",
+      "how common is pcos",
+      "pcos prevalence"
+    ],
+    "answer": "PCOS is one of the most common endocrine conditions in reproductive-age individuals, and many cases remain undiagnosed.",
+    "sources": [
+      {
+        "title": "WHO: Polycystic ovary syndrome fact sheet",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome"
+      }
+    ]
+  },
+  {
+    "id": "faq-can-pcos-be-managed",
+    "prompts": [
+      "can pcos be managed",
+      "how to manage pcos",
+      "pcos treatment options"
+    ],
+    "answer": "PCOS can often be managed with a personalized plan that may include nutrition, movement, sleep and stress support, and clinician-guided treatment based on individual goals.",
+    "sources": [
+      {
+        "title": "NIH NICHD: PCOS overview",
+        "url": "https://www.nichd.nih.gov/health/topics/pcos"
+      },
+      {
+        "title": "ACOG: PCOS FAQ",
+        "url": "https://www.acog.org/womens-health/faqs/polycystic-ovary-syndrome-pcos"
+      }
+    ]
+  }
+]

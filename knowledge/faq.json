@@ -1,0 +1,45 @@
+[
+  {
+    "id": "what-is-pcos",
+    "prompts": [
+      "what is pcos",
+      "define pcos",
+      "pcos meaning"
+    ],
+    "answer": "PCOS is a common hormonal condition that can affect menstrual cycles, fertility, metabolism, skin, and emotional well-being.",
+    "sources": [
+      {
+        "title": "WHO: Polycystic ovary syndrome fact sheet",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome"
+      }
+    ]
+  },
+  {
+    "id": "is-pcos-common",
+    "prompts": [
+      "is pcos common",
+      "how common is pcos"
+    ],
+    "answer": "PCOS is one of the most common endocrine conditions in reproductive-age individuals.",
+    "sources": [
+      {
+        "title": "WHO: Polycystic ovary syndrome fact sheet",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome"
+      }
+    ]
+  },
+  {
+    "id": "can-pcos-be-managed",
+    "prompts": [
+      "can pcos be managed",
+      "how to manage pcos"
+    ],
+    "answer": "PCOS can often be managed with personalized support, including lifestyle strategies and clinician-guided treatment options.",
+    "sources": [
+      {
+        "title": "Endocrine Society: PCOS patient guide",
+        "url": "https://www.endocrine.org/patient-engagement/endocrine-library/pcos"
+      }
+    ]
+  }
+]

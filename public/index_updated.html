@@ -35,12 +35,18 @@
       background: url('background.png') center/cover;
       background-size: cover;
       background-position: center;
-      padding: 40px 20px 60px 20px;
+      padding: 28px 20px 60px 20px;
       text-align: center;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       color: #333;
-      min-height: 250px;
+      min-height: 460px;
       position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 860px;
+      margin: 120px auto 0 auto;
     }
 
     .logo-container {
@@ -58,6 +64,7 @@
       display: flex;
       align-items: flex-start;
       gap: 30px;
+      flex-wrap: wrap;
     }
 
     header h1 {
@@ -79,7 +86,6 @@
       max-width: 700px;
       margin: 0 auto;
       line-height: 1.8;
-      display: none;
     }
 
     section {
@@ -366,146 +372,312 @@
       text-decoration: underline;
     }
 
-    .chat-launcher {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 1200;
-      border: none;
-      background: #2b6f73;
-      color: #fff;
-      font-weight: 700;
-      border-radius: 999px;
-      padding: 12px 16px;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(43, 111, 115, 0.35);
-    }
-
-    .chat-panel {
-      position: fixed;
-      left: 50%;
-      right: auto;
-      bottom: 82px;
-      transform: translateX(-50%);
-      width: min(680px, calc(100vw - 48px));
-      height: min(72vh, 760px);
-      display: none;
-      flex-direction: column;
-      background: #fff;
-      border: 1px solid #d4e3e5;
-      border-radius: 12px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
-      overflow: hidden;
-      z-index: 1200;
-      resize: both;
-      min-width: 360px;
-      min-height: 420px;
-      max-width: calc(100vw - 24px);
-      max-height: calc(100vh - 96px);
-    }
-
-    .chat-panel.is-open {
+    
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e6f0f1;
       display: flex;
-    }
-
-    .chat-header {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 12px 14px;
-      background: #f0f7f8;
-      border-bottom: 1px solid #d4e3e5;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 18px;
     }
 
-    .chat-header strong {
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #2b6f73;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 1px solid #d4e3e5;
+      background: #fff;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #4a9fa5;
+      box-shadow: 0 0 0 4px rgba(74, 159, 165, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(74, 159, 165, 0.12);
       color: #2b6f73;
     }
 
-    .chat-close {
-      border: none;
-      background: transparent;
-      color: #666;
-      font-size: 1.2rem;
+    .nav-toggle {
+      display: none;
+      border: 1px solid #d4e3e5;
+      background: #fff;
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-weight: 800;
       cursor: pointer;
     }
 
-    .chat-messages {
-      padding: 12px;
-      overflow-y: auto;
-      flex: 1;
-      display: grid;
-      gap: 10px;
-      background: #fff;
+    .header-desc {
+      display: block;
+      font-size: 1.05rem;
+      max-width: 760px;
+      margin: 18px auto 18px auto;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.78);
+      padding: 10px 14px;
+      border-radius: 12px;
     }
 
-    .chat-bubble {
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+      line-height: 1.15;
+    }
+
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       border-radius: 10px;
-      padding: 10px 12px;
-      line-height: 1.5;
-      font-size: 0.95rem;
-      white-space: pre-wrap;
+      padding: 12px 16px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid transparent;
     }
 
-    .chat-bubble.user {
+    .btn.primary {
       background: #2b6f73;
       color: #fff;
-      justify-self: end;
-      max-width: 92%;
     }
 
-    .chat-bubble.bot {
-      background: #f4f7f8;
-      color: #333;
-      border: 1px solid #e3ecee;
-      max-width: 95%;
+    .btn.primary:hover {
+      filter: brightness(0.95);
     }
 
-    .chat-sources {
-      margin-top: 8px;
+    .btn.secondary {
+      background: #fff;
+      color: #2b6f73;
+      border-color: #cfe3e5;
+    }
+
+    .btn.secondary:hover {
+      background: rgba(74, 159, 165, 0.08);
+    }
+
+    .section-intro {
+      color: #555;
+      margin-top: -10px;
+      margin-bottom: 18px;
+    }
+
+    .mini-cards {
       display: grid;
-      gap: 4px;
-      font-size: 0.84rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
     }
 
-    .chat-sources a {
+    .mini-card {
+      background: #ffffff;
+      border: 1px solid #dfecee;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(43, 111, 115, 0.06);
+    }
+
+    .mini-card h3 {
+      color: #2b6f73;
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    .mini-card p {
+      margin-bottom: 0;
+      color: #555;
+    }
+
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .download-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f7f8 100%);
+      border: 1px solid #dfecee;
+      border-left: 5px solid #4a9fa5;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(43, 111, 115, 0.08);
+    }
+
+    .download-card h3 {
+      color: #2b6f73;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .download-card p {
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    .download-card a {
+      font-weight: 900;
       color: #2b6f73;
       text-decoration: none;
-      font-weight: 600;
     }
 
-    .chat-sources a:hover {
+    .download-card a:hover {
       text-decoration: underline;
     }
 
-    .chat-form {
-      border-top: 1px solid #d4e3e5;
-      padding: 10px;
+    .event-list {
       display: grid;
-      gap: 8px;
-      background: #fff;
-      flex-shrink: 0;
+      gap: 14px;
+      margin-top: 18px;
     }
 
-    .chat-form textarea {
+    .event-item {
+      border: 1px solid #dfecee;
+      border-radius: 12px;
+      padding: 16px 18px;
+      background: #fff;
+    }
+
+    .event-item h3 {
+      margin-bottom: 6px;
+      color: #2b6f73;
+      font-size: 1.15rem;
+    }
+
+    .event-meta {
+      color: #666;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .newsletter {
+      border: 1px solid #dfecee;
+      background: #f8fcfc;
+      border-radius: 12px;
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .newsletter input {
       width: 100%;
-      min-height: 68px;
-      max-height: 140px;
-      resize: vertical;
+      padding: 12px 14px;
       border: 1px solid #d4e3e5;
-      border-radius: 8px;
-      padding: 10px;
+      border-radius: 10px;
+      font-size: 1rem;
       font-family: inherit;
     }
 
-    .chat-form button {
-      justify-self: end;
+    .muted {
+      color: #666;
+      font-size: 0.95rem;
     }
 
-    .chat-note {
-      font-size: 0.78rem;
-      color: #666;
-      line-height: 1.4;
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
+
+    @media (max-width: 860px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding-top: 10px;
+      }
+      .top-nav {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      .nav-links.is-open { display: flex; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.2rem; }
+      header {
+        padding: 20px 16px 44px 16px;
+        min-height: 520px;
+      }
+      .hero-content {
+        margin-top: 96px;
+      }
+      .header-desc {
+        margin-top: 14px;
+      }
+      .hero-cta {
+        margin-top: 16px;
+      }
+      .about-intro {
+        justify-content: center;
+      }
+      .logo-container {
+        margin-right: 0;
+      }
+    }
+
 
     @media (max-width: 768px) {
       header h1 {
@@ -523,38 +695,52 @@
       section {
         padding: 40px 15px;
       }
-
-      .chat-launcher {
-        right: 12px;
-        bottom: 12px;
-      }
-
-      .chat-panel {
-        left: 12px;
-        right: 12px;
-        bottom: 64px;
-        transform: none;
-        width: auto;
-        height: min(78vh, 760px);
-        min-width: 0;
-        min-height: 420px;
-        resize: none;
-      }
     }
   </style>
 </head>
 
 <body>
+<div id="top"></div>
 
+  <nav class="top-nav" aria-label="Primary">
+    <a class="brand" href="#top">
+      <img class="brand-logo" src="/logo.png" alt="Project CYSTEM" />
+      <!--span class="brand-name">Project CYSTEM</span-->
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+      Menu
+    </button>
+    <div id="navLinks" class="nav-links">
+      <a href="#about">About</a>
+      <a href="#mission">Mission</a>
+      <a href="#resources">Resources</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#events">Events</a>
+      <a href="#get-involved">Get Involved</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+
+  
   <header>
-    <p class="tagline"><strong>Support. Awareness. Strength.</strong></p>
-    <p class="header-desc">
-      Empowering individuals with Polycystic Ovary Syndrome (PCOS) through education,
-      advocacy, and community-driven support.
-    </p>
+    <div class="hero-content">
+      <h1 class="hero-title">Project CYSTEM</h1>
+      <p class="tagline"><strong>Support. Awareness. Strength.</strong></p>
+      <p class="header-desc">
+        Empowering individuals with Polycystic Ovary Syndrome (PCOS) through education,
+        advocacy, and community-driven support.
+      </p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#toolkit">Download Toolkit</a>
+        <a class="btn secondary" href="#resources">Trusted Resources</a>
+        <a class="btn secondary" href="#contact">Contact</a>
+      </div>
+    </div>
   </header>
 
-  <section>
+
+  <section id="about">
     <div class="about-intro">
       <div class="logo-container">
         <img src="/logo.png" alt="Project CYSTEM Logo" />
@@ -579,7 +765,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="mission">
     <h2>Our Mission</h2>
     <p>
       To empower individuals affected by PCOS through education, advocacy, and community
@@ -628,7 +814,7 @@
     </p>
   </section>
 
-  <section>
+  <section id="resources">
     <h2>FAQ & Trusted Resources</h2>
     <p>
       Quick answers to common PCOS questions and trusted links for deeper reading.
@@ -693,15 +879,125 @@
     </div>
   </section>
 
-  <section>
+  
+  <section id="toolkit">
+    <h2>PCOS Awareness Toolkit</h2>
+    <p class="section-intro">
+      Download and share these free resources to help spread accurate, stigma-free PCOS education.
+      (We’ll keep adding more over time.)
+    </p>
+
+    <div class="toolkit-grid">
+      <div class="download-card">
+        <h3>📄 PCOS Myths vs Facts (1-page)</h3>
+        <p>
+          A quick handout that clears up common misconceptions in a respectful, science-backed way.
+        </p>
+        <a href="toolkit/pcos-myths-vs-facts.pdf" download>Download PDF</a>
+        <p class="muted">File: toolkit/pcos-myths-vs-facts.pdf</p>
+      </div>
+
+      <div class="download-card">
+        <h3>🩺 Talking to Your Doctor Checklist</h3>
+        <p>
+          A simple checklist to help you prepare for appointments and advocate for proper evaluation.
+        </p>
+        <a href="toolkit/doctor-visit-checklist.pdf" download>Download PDF</a>
+        <p class="muted">File: toolkit/doctor-visit-checklist.pdf</p>
+      </div>
+
+      <div class="download-card">
+        <h3>📱 Social Media Share Pack</h3>
+        <p>
+          Shareable graphics + captions for PCOS Awareness. Great for schools, clubs, and community pages.
+        </p>
+        <a href="toolkit/social-pack.zip" download>Download ZIP</a>
+        <p class="muted">File: toolkit/social-pack.zip</p>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top: 14px;">
+      Note: These downloads are educational and not medical advice.
+    </p>
+  </section>
+
+  <section id="events">
+    <h2>Events</h2>
+    <p class="section-intro">
+      We host and support PCOS awareness events, school/community presentations, and advocacy initiatives.
+    </p>
+
+    <div class="event-list">
+      <div class="event-item">
+        <h3>No upcoming events yet</h3>
+        <div class="event-meta">Check back soon — or request a workshop.</div>
+        <p>
+          If you’d like Project CYSTEM to speak at your school, club, or community group,
+          reach out through the contact form.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="get-involved">
     <h2>Get Involved</h2>
     <p>
       You can support Project CYSTEM by sharing educational resources, participating in
       awareness initiatives, and engaging in respectful conversations about women’s health.
     </p>
-    <p>
-      Together, we can create change.
-    </p>
+
+    <div class="mini-cards">
+      <div class="mini-card">
+        <h3>🙋 Volunteer</h3>
+        <p>
+          Help with outreach, event planning, content, design, or school/community partnerships.
+        </p>
+        <div style="margin-top: 12px;">
+          <a class="btn secondary" href="#contact">Volunteer Interest</a>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <h3>🎤 Request a Workshop</h3>
+        <p>
+          Invite Project CYSTEM to speak at your school, club, workplace, or community group.
+        </p>
+        <div style="margin-top: 12px;">
+          <a class="btn secondary" href="#contact">Request a Speaker</a>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <h3>📣 Share the Toolkit</h3>
+        <p>
+          Use our downloadable handouts and social media pack to spread accurate PCOS information.
+        </p>
+        <div style="margin-top: 12px;">
+          <a class="btn secondary" href="#toolkit">Go to Toolkit</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="newsletter" aria-label="Newsletter signup">
+      <h3 style="color:#2b6f73;">Stay Connected</h3>
+      <p class="muted">
+        Get occasional updates about new resources, events, and awareness initiatives.
+        (No spam. Unsubscribe anytime.)
+      </p>
+
+      <form id="newsletterForm">
+        <label class="sr-only" for="newsletterEmail">Email address</label>
+        <input id="newsletterEmail" name="email" type="email" autocomplete="email" placeholder="Email address" required />
+        <button class="submit-btn" type="submit">Join Newsletter</button>
+        <div id="newsletterStatus" class="form-status" aria-live="polite"></div>
+      </form>
+
+      <p class="muted">
+        Developer note: connect this form to Mailchimp / ConvertKit / Brevo later.
+      </p>
+    </div>
+
     <div class="follow-us">
       <h3>Follow Us : </h3>
       <div class="social-links">
@@ -722,10 +1018,11 @@
     </div>
   </section>
 
-  <section>
+
+  <section id="contact">
     <h2>Contact Us</h2>
     <p>
-      Have a question or want to collaborate? Send us a message and weâ€™ll get back to you.
+      Have a question or want to collaborate? Send us a message and we’ll get back to you.
     </p>
     <div class="contact-cta">
       <button id="openContactModal" class="submit-btn" type="button">Open Contact Form</button>
@@ -749,7 +1046,7 @@
 
   <div id="contactModal" class="modal-backdrop" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
-      <button class="modal-close" type="button" aria-label="Close contact form">Ã—</button>
+      <button class="modal-close" type="button" aria-label="Close contact form">×</button>
       <h3 id="contactModalTitle">Send Us a Message</h3>
       <form id="contactForm" class="contact-form" data-recaptcha-site-key="6Lfxd2gsAAAAAIelKZJJO5j3vYLms8lh6aDHDV7y">
         <div>
@@ -774,23 +1071,43 @@
     </div>
   </div>
 
-  <button id="chatLauncher" class="chat-launcher" type="button" aria-expanded="false">Ask PCOS Q&A</button>
-  <aside id="chatPanel" class="chat-panel" aria-hidden="true">
-    <div class="chat-header">
-      <strong>Project CYSTEM Q&A</strong>
-      <button id="chatClose" class="chat-close" type="button" aria-label="Close chat">x</button>
-    </div>
-    <div id="chatMessages" class="chat-messages">
-      <div class="chat-bubble bot">Hi. Ask a PCOS education question and I will answer using trusted sources.</div>
-    </div>
-    <form id="chatForm" class="chat-form">
-      <textarea id="chatInput" placeholder="Ask your question..." required></textarea>
-      <button type="submit" class="submit-btn">Send</button>
-      <div class="chat-note">Educational content only. Not medical diagnosis or treatment advice.</div>
-    </form>
-  </aside>
-
   <script src="contact-form.js"></script>
-  <script src="chatbot.js"></script>
+
+  <script>
+    // Mobile nav toggle
+    (function () {
+      const btn = document.querySelector('.nav-toggle');
+      const links = document.getElementById('navLinks');
+      if (!btn || !links) return;
+
+      btn.addEventListener('click', function () {
+        const isOpen = links.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      // Close nav when clicking a link (mobile)
+      links.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          links.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    // Newsletter (placeholder)
+    (function () {
+      const form = document.getElementById('newsletterForm');
+      const status = document.getElementById('newsletterStatus');
+      if (!form || !status) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.className = 'form-status success';
+        status.textContent = "Thanks! You’re on the list (demo).";
+        form.reset();
+      });
+    })();
+  </script>
+
 </body>
 </html>

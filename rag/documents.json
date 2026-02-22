@@ -1,0 +1,38 @@
+[
+  {
+    "id": "who-pcos-overview",
+    "title": "WHO: Polycystic ovary syndrome fact sheet",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome",
+    "content": "WHO describes PCOS as a common hormonal condition that can affect reproductive, metabolic, and psychological health. It may involve irregular menstrual cycles, elevated androgens, and ovarian dysfunction. WHO emphasizes long-term risks such as insulin resistance and cardiometabolic complications, and supports early diagnosis, education, and equitable access to care."
+  },
+  {
+    "id": "nih-nichd-pcos",
+    "title": "NIH NICHD: PCOS overview",
+    "url": "https://www.nichd.nih.gov/health/topics/pcos",
+    "content": "NICHD explains that PCOS can include irregular periods, infertility, insulin resistance, acne, and hair growth changes. Diagnosis is based on clinical history, exam findings, and lab or imaging support. Management is individualized and can include lifestyle changes and medications depending on patient goals such as cycle regulation or fertility."
+  },
+  {
+    "id": "cdc-pcos-diabetes",
+    "title": "CDC: PCOS and diabetes risk",
+    "url": "https://www.cdc.gov/diabetes/risk-factors/pcos-polycystic-ovary-syndrome.html",
+    "content": "CDC notes that many people with PCOS have insulin resistance, which increases risk for type 2 diabetes and prediabetes. Healthy eating, physical activity, weight management, and regular medical follow-up can lower risk and improve outcomes."
+  },
+  {
+    "id": "endocrine-patient-guide",
+    "title": "Endocrine Society: PCOS patient guide",
+    "url": "https://www.endocrine.org/patient-engagement/endocrine-library/pcos",
+    "content": "The Endocrine Society patient guide highlights that PCOS symptoms vary by person and may evolve over time. It recommends evaluation for metabolic and cardiovascular risk factors and supports a long-term, multidisciplinary care approach."
+  },
+  {
+    "id": "acog-pcos-faq",
+    "title": "ACOG: PCOS FAQ",
+    "url": "https://www.acog.org/womens-health/faqs/polycystic-ovary-syndrome-pcos",
+    "content": "ACOG explains common PCOS symptoms, diagnostic considerations, and treatment categories. It emphasizes that treatment depends on symptoms and life stage, and encourages patients to work with clinicians on a personalized plan."
+  },
+  {
+    "id": "pcos-challenge-support",
+    "title": "PCOS Challenge: support and advocacy",
+    "url": "https://www.pcoschallenge.org/",
+    "content": "PCOS Challenge focuses on patient support, awareness, and advocacy. Community support and education can help reduce stigma, improve self-advocacy, and connect people with trusted information and peer resources."
+  }
+]
